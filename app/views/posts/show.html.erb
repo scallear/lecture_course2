@@ -1,0 +1,7 @@
+<%= render 'shared/title', title: @post.title %>
+
+<div class='span8 well'>
+  <h2><%= link_to @post.url, @post.url %></h2>
+    <p>by <%= @post.creator.username %> at <span class='quiet'><%= @post.created_at %></span></p>
+    <p><%= @post.description %> </p>
+</div>
