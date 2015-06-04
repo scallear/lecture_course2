@@ -1,0 +1,8 @@
+<%= render 'shared/title', title: 'Add Category' %>
+
+<%= form_for @category do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit 'Add' %>
+<% end %>
