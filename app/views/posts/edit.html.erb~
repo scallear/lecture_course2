@@ -1,3 +1,0 @@
-<%= render 'shared/title', title: "Editing \"#{@post.title}\"" %>
-
-<%= render 'form', button_name: 'Update' %>
