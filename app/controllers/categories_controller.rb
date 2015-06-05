@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
+    @title = @category.name
   end
 
   def new
+    @title = "Add Category"
     @category = Category.new
   end
 

@@ -2,12 +2,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
   def index
+    @title = "All Posts"
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @title = @post.title
+  end
 
   def new
+    @title = "New Post"
     @post = Post.new
   end
 
@@ -23,7 +27,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @title = @post.title
+  end
 
   def update
     if @post.update(params_post)

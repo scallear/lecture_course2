@@ -1,7 +1,8 @@
-<%= render 'shared/title', title: @post.title %>
+<%= render 'shared/title' %>
 
 <div class='span8 well'>
+  <%= render 'shared/category_display', post: @post %>
   <h2><%= link_to @post.url, @post.url %></h2>
-    <p>by <%= @post.creator.username %> at <span class='quiet'><%= @post.created_at %></span></p>
+    <p>by <%= @post.user_id ? @post.creator.username : 'Unknown' %> at <span class='quiet'><%= @post.created_at %></span></p>
     <p><%= @post.description %> </p>
 </div>
