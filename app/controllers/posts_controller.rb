@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @title = @post.title
+    @comment = Comment.new
   end
 
   def new
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
       flash[:notice] = "The \"#{@post.title}\" post was created!"
       redirect_to posts_path
     else
+      @title = "New Post"
       render :new
     end
   end
@@ -36,6 +38,7 @@ class PostsController < ApplicationController
       flash[:notice] = "The \"#{@post.title}\" post was updated."
       redirect_to post_path
     else
+      @title = @post.title
       render :edit
     end
   end

@@ -5,4 +5,15 @@
   <h2><%= link_to @post.url, @post.url %></h2>
     <p>by <%= @post.user_id ? @post.creator.username : 'Unknown' %> at <span class='quiet'><%= @post.created_at %></span></p>
     <p><%= @post.description %> </p>
+  <%= link_to 'Back to All Posts', posts_path %>
+</div>
+
+<div class='span4'>
+  <%= render 'shared/error_display', obj: @comment %>
+  <h5>Create a Comment</h5>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :body %>
+    <br>
+    <%= f.submit 'Create Comment' %>
+  <% end %>
 </div>
